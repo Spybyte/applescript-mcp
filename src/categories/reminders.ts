@@ -4,6 +4,9 @@ import { ScriptCategory } from "../types/index.js";
  * Helper function to create AppleScript that preserves app state
  */
 function withAppStatePreservation(script: string): string {
+  // Remove any existing return statements and extract the main logic
+  const scriptBody = script.replace(/\breturn\s+.+$/gm, '').trim();
+  
   return `
 set wasRunning to false
 tell application "System Events"
@@ -14,15 +17,20 @@ end tell
 
 set scriptResult to ""
 try
-  ${script.replace(/return (.+)$/m, 'set scriptResult to $1')}
+  ${scriptBody}
+  -- The result should be in 'output' variable from the original script
+  try
+    set scriptResult to output
+  on error
+    set scriptResult to "Script completed successfully"
+  end try
 on error errMsg
   set scriptResult to "Error: " & errMsg
 end try
 
 if not wasRunning then
   try
-    -- Leave Reminders open for potential follow-up commands
-    -- It will quit naturally when the user is done or system manages it
+    tell application "Reminders" to quit
   on error
     -- Ignore any errors
   end try
