@@ -158,7 +158,7 @@ export class AppleScriptFramework {
       try {
         this.server.sendLoggingMessage({
           level: level,
-          message: message,
+          logger: message,
           data: data || {},
         });
       } catch (error) {
