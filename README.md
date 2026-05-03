@@ -35,10 +35,12 @@ This server provides a standardized interface for AI applications to control sys
 
 ### Calendar
 
-| Command | Description           | Parameters                                          |
-| ------- | --------------------- | --------------------------------------------------- |
-| `add`   | Create calendar event | `title`, `startDate`, `endDate`, `calendar` (optional) |
-| `list`  | List today's events   | None                                                |
+| Command  | Description           | Parameters                                          |
+| -------- | --------------------- | --------------------------------------------------- |
+| `add`    | Create calendar event | `title`, `startDate`, `endDate`, `calendar` (optional) |
+| `edit`   | Edit an existing event | `eventId`, `newTitle` (optional), `newStartDate` (optional), `newEndDate` (optional), `calendar` (optional) |
+| `list`   | List today's events   | None                                                |
+| `search` | Search for events     | `searchTerm`, `startDate` (optional), `endDate` (optional), `calendar` (optional), `limit` (optional), `exact` (optional) |
 
 #### Examples
 
@@ -48,6 +50,12 @@ Create a calendar event titled "Team Meeting" starting tomorrow at 2pm for 1 hou
 
 // List today's events
 What events do I have scheduled for today?
+
+// Search for events
+Search for calendar events containing "meeting" in the next 30 days
+
+// Edit an event (use search first to find the event ID)
+Update the event title to "Team Sync" for event ID abc123
 ```
 
 ### Clipboard
@@ -113,19 +121,23 @@ Turn on Do Not Disturb mode
 
 ### System
 
-| Command             | Description       | Parameters                 |
-| ------------------- | ----------------- | -------------------------- |
-| `volume`            | Set system volume | `level` (0-100)            |
-| `get_frontmost_app` | Get active app    | None                       |
-| `launch_app`        | Open application  | `name`                     |
-| `quit_app`          | Close application | `name`, `force` (optional) |
-| `toggle_dark_mode`  | Toggle dark mode  | None                       |
+| Command             | Description        | Parameters                 |
+| ------------------- | ------------------ | -------------------------- |
+| `volume`            | Set system volume  | `level` (0-100)            |
+| `get_volume`        | Get system volume  | None                       |
+| `get_frontmost_app` | Get active app     | None                       |
+| `launch_app`        | Open application   | `name`                     |
+| `quit_app`          | Close application  | `name`, `force` (optional) |
+| `toggle_dark_mode`  | Toggle dark mode   | None                       |
 
 #### Examples
 
 ```
 // Set system volume
 Set my Mac's volume to 50%
+
+// Get current volume
+What is my current volume level?
 
 // Get active application
 What app am I currently using?
