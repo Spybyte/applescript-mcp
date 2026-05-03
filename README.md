@@ -3,7 +3,7 @@
 A Model Context Protocol server that enables LLM applications to interact with macOS through AppleScript.
 This server provides a standardized interface for AI applications to control system functions, manage files, handle notifications, and more.
 
-[![Node.js CI](https://github.com/joshrutkowski/applescript-mcp/actions/workflows/node.js.yml/badge.svg)](https://github.com/joshrutkowski/applescript-mcp/actions/workflows/node.js.yml)
+[![Node.js CI](https://github.com/Spybyte/applescript-mcp/actions/workflows/node.js.yml/badge.svg)](https://github.com/Spybyte/applescript-mcp/actions/workflows/node.js.yml)
 
 <a href="https://glama.ai/mcp/servers/0t5gydjcqw"><img width="380" height="200" src="https://glama.ai/mcp/servers/0t5gydjcqw/badge" alt="applescript-mcp MCP server" /></a>
 
