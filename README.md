@@ -5,8 +5,6 @@ This server provides a standardized interface for AI applications to control sys
 
 [![Node.js CI](https://github.com/Spybyte/applescript-mcp/actions/workflows/node.js.yml/badge.svg)](https://github.com/Spybyte/applescript-mcp/actions/workflows/node.js.yml)
 
-<a href="https://glama.ai/mcp/servers/0t5gydjcqw"><img width="380" height="200" src="https://glama.ai/mcp/servers/0t5gydjcqw/badge" alt="applescript-mcp MCP server" /></a>
-
 ## Features
 
 - 🗓️ Calendar management (events, reminders)
